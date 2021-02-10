@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import Counter from './components/counter'
+import { CountProvider } from './providers/count-provider'
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CountProvider>
+      <div className="container my-5">
+        <h3 className="text-center">React Hooks and Context Api - Like Redux</h3>
+        <div className="row">
+          <div className="col-md-6 offset-md-3">
+            <Counter />
+          </div>
+        </div>
+      </div>
+    </CountProvider>
+    
   );
 }
 
